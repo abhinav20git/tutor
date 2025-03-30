@@ -6,6 +6,7 @@ import Works from "@/components/Works";
 import Reviews from "@/components/Reviews";
 import StudyBay from "@/components/study-bay";
 import ReachOut from "@/components/ReachOut";
+import ClaimOffer from "@/components/claim-offer";
 export default function Home() {
   return (
     <div className="bg-[#F5F3EF]">
@@ -13,10 +14,13 @@ export default function Home() {
       <HomeworkHelpLanding />
       <TrustBadges />
       <Works/>
-      <StudyBay/>
+      
+      <StudyBay/><ReachOut/>
+      
       <Reviews/>
+      <ClaimOffer/>
       <FAQ/>
-      <ReachOut/>
+      
     </div>
   );
 }

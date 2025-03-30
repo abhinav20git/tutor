@@ -1,21 +1,50 @@
-import { Crown } from "lucide-react"
-import Image from "next/image"
+"use client";
+import { useState } from "react";
+import { Crown } from "lucide-react";
+import Image from "next/image";
 
 export default function StudyBay() {
   const features = [
     {
-      icon: "/placeholder.svg?height=60&width=60",
+      icon: "/image4.png",
       title: "Huge Community of Experts",
       description:
         "We bring together verified college professors, practicing scientists, independent researchers, freelance journalists, essay writers, and thousands of other experts in different fields of study, not only from the USA, but from all over the world. They are ready to share their knowledge and provide you with professional assignment help.",
     },
     {
-      icon: "/placeholder.svg?height=60&width=60",
+      icon: "/image5.png",
       title: "Affordable Prices",
       description:
         "As a strong team of developers, we use high-tech solutions such as AI-based tools to cover various parts of the process of each project. For example, we automate and optimize plagiarism checking and grammar checking, which lets us offer students assistance of exceptional quality rather than just cheap homework assignment help.",
     },
-  ]
+    {
+      icon: "/image6.png",
+      title: "Data Security",
+      description:
+        "We care about your security, therefore we encrypt all personal data to make every user feel safe while using XpertBuddy. We don’t share any personal information with any third parties without your permission.",
+    },
+    {
+      icon: "/image7.png",
+      title: "Safe Payment Methods",
+      description:
+        "We use fast, convenient, modern, and safe payment tools and solutions, such as PayPal, Payoneer, and Visa/Mastercard, for payments and withdrawals. We’re constantly working on adding more options.",
+    },
+  ];
+
+  const itemsPerPage = 2;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(features.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentFeatures = features.slice(startIndex, startIndex + itemsPerPage);
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+  };
 
   return (
     <section id="featured" className="py-16 px-4 bg-gray-50">
@@ -29,8 +58,8 @@ export default function StudyBay() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {features.map((feature) => (
-            <div key={feature.title} className="bg-white rounded-xl p-6">
+          {currentFeatures.map((feature) => (
+            <div key={feature.title} className="bg-white rounded-xl p-6 shadow-md">
               <div className="flex items-start mb-4">
                 <div className="relative w-12 h-12 mr-4">
                   <Image src={feature.icon || "/placeholder.svg"} alt={feature.title} fill className="object-contain" />
@@ -43,7 +72,13 @@ export default function StudyBay() {
         </div>
 
         <div className="flex justify-center mt-8">
-          <button className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center mr-4 hover:bg-gray-100 transition-colors">
+          <button
+            onClick={goToPreviousPage}
+            disabled={currentPage === 1}
+            className={`w-12 h-12 rounded-full border flex items-center justify-center mr-4 transition-colors ${
+              currentPage === 1 ? "bg-gray-200 cursor-not-allowed" : "hover:bg-gray-100"
+            }`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -60,7 +95,18 @@ export default function StudyBay() {
               <path d="M19 12H5" />
             </svg>
           </button>
-          <button className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition-colors">
+
+          <span className="mx-4 text-lg">
+            {currentPage} / {totalPages}
+          </span>
+
+          <button
+            onClick={goToNextPage}
+            disabled={currentPage === totalPages}
+            className={`w-12 h-12 rounded-full border flex items-center justify-center transition-colors ${
+              currentPage === totalPages ? "bg-gray-200 cursor-not-allowed" : "hover:bg-gray-100"
+            }`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -80,6 +126,5 @@ export default function StudyBay() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

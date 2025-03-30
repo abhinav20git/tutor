@@ -2,10 +2,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { CalendarIcon, Crown } from "lucide-react"
 import Image from "next/image"
+import Benefits from "./benefits"
 
 export default function ReachOut() {
-  return (
-    <section className="py-16 px-4 bg-pink-500">
+  return (<>
+    <section className="py-16 px-4 bg-pink-500 h-[40%] relative">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row gap-10">
           <div className="w-full md:w-1/2">
@@ -37,7 +38,7 @@ export default function ReachOut() {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative h-40 md:h-60">
                 <Image
-                  src="/placeholder.svg?height=240&width=180"
+                  src="/image3.png"
                   alt="Expert 1"
                   fill
                   className="object-cover rounded-2xl"
@@ -45,7 +46,7 @@ export default function ReachOut() {
               </div>
               <div className="relative h-40 md:h-60 mt-10">
                 <Image
-                  src="/placeholder.svg?height=240&width=180"
+                  src="/image1.png"
                   alt="Expert 2"
                   fill
                   className="object-cover rounded-2xl"
@@ -53,7 +54,7 @@ export default function ReachOut() {
               </div>
               <div className="relative h-40 md:h-60 col-span-2 mx-auto w-3/4">
                 <Image
-                  src="/placeholder.svg?height=240&width=320"
+                  src="/image2.png"
                   alt="Expert 3"
                   fill
                   className="object-cover rounded-2xl"
@@ -64,6 +65,7 @@ export default function ReachOut() {
         </div>
       </div>
     </section>
+    <Benefits/></>
   )
 }
 

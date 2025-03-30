@@ -58,7 +58,7 @@ export default function Reviews() {
               <div className="flex items-center gap-2 mb-2">
                 <div className="relative w-8 h-8">
                   <Image
-                    src={platform.logo || "/placeholder.svg"}
+                    src="/image8.png"
                     alt={platform.name}
                     fill
                     className="object-contain"

@@ -8,21 +8,21 @@ export default function Works() {
       number: "01",
       title: "Fill in a brief",
       description: "Tell us what you need help with, describe your project requirements, and set the deadline.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/image10.png",
     },
     {
       number: "02",
       title: "Choose an expert",
       description:
         "Receive offers from those who can help with assignments, compare their ratings, and pick the best one for your task.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/image11.png",
     },
     {
       number: "03",
       title: "Get It Done On Time",
       description:
         "Chat with the expert directly, discuss your project in detail, and get professional academic assistance by the deadline.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/image12.png",
     },
   ]
 
@@ -34,7 +34,7 @@ export default function Works() {
           <h2 className="text-3xl md:text-4xl font-bold text-center">How It Works</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 align-middle">
           {steps.map((step, index) => (
             <div key={step.number} className="bg-white rounded-xl shadow-md overflow-hidden relative">
               <div className="p-6">
