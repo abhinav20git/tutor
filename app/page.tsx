@@ -2,8 +2,8 @@ import Navbar from "@/components/Navbar";
 import HomeworkHelpLanding from "@/components/Hero";
 import TrustBadges from "@/components/TrustPage";
 import FAQ from "@/components/Faq";
-import Works from "@/components/works";
-import Reviews from "@/components/reviews";
+import Works from "@/components/Works";
+import Reviews from "@/components/Reviews";
 import StudyBay from "@/components/study-bay";
 import ReachOut from "@/components/ReachOut";
 export default function Home() {
