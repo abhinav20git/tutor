@@ -13,7 +13,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "Can you help me with my homework in less than 24 hours?",
-      answer: "Our name 24HourAnswers means you can submit work 24 hours a day – it doesnt mean we can help you master what you need to know in 24 hours. If you make arrangements in advance, and if you are a very fast learner, then yes, we may be able to help you achieve your goals in 24 hours. Remember, high-quality, customized help tailored around individual student needs takes time.",
+      answer: "Our name 24HourAnswers means you can submit work 24 hours a day, it doesnt mean we can help you master what you need to know in 24 hours. If you make arrangements in advance, and if you are a very fast learner, then yes, we may be able to help you achieve your goals in 24 hours. Remember, high-quality, customized help tailored around individual student needs takes time.",
     },
     {
       question: "Can you help me with my exam/quiz/test?",
