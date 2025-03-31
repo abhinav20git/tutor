@@ -29,7 +29,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
-    "mini-css-extract-plugin": "^2.9.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
